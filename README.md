@@ -1,17 +1,28 @@
 # NI DIGITAL Website
 
-A responsive business website for NI DIGITAL, a technology retailer based in Ratnapura, Sri Lanka.
+A responsive React website for NI DIGITAL, a technology retailer based in Ratnapura, Sri Lanka.
 
 ## Pages
 
-- `NI_DIGITAL_Professional_Website_Updated.html` — Home page
+- `index.html` — Home page
 - `products.html` — Product categories and availability links
 - `about.html` — Company information, vision, mission, and values
 
-## Preview locally
+The original `NI_DIGITAL_Professional_Website_Updated.html` home page URL is also preserved.
 
-Keep all files in this repository together, then open `NI_DIGITAL_Professional_Website_Updated.html` in a browser. The pages share `site.css` and `site.js`; the logo and product photos are local assets.
+## Run locally
 
-## Deploy
+Install dependencies and start the Vite development server:
 
-This is a static website and does not require a build step. Upload the repository files to a static hosting provider such as Cloudflare Pages. For GitHub Pages, configure the site’s publishing source and set the homepage file as `index.html` if you want the root URL to open the home page.
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+Vite writes the production-ready static site to `dist/`. Deploy that folder with a static hosting provider such as Cloudflare Pages or Vercel.
