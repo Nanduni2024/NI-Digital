@@ -118,6 +118,7 @@ function Icon({ name, className }) {
     menu: <path d="M4 7h16M4 12h16M4 17h16" />,
     search: <><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.5 4.5" /></>,
     close: <path d="m6 6 12 12M18 6 6 18" />,
+    chevron: <path d="m6 9 6 6 6-6" />,
     whatsapp: (
       <>
         <path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.3L3 20l1.2-4.9a8.4 8.4 0 1 1 16.3-3.5Z" />
@@ -225,7 +226,7 @@ function Header({ page }) {
             aria-controls={productsOpen ? "product-mega-menu" : undefined}
             onClick={() => { setProductsOpen((open) => !open); setSearchOpen(false); }}
           >
-            Products <span aria-hidden="true">⌄</span>
+            Products <Icon name="chevron" className="nav-chevron" />
           </button>
           <a href={ABOUT_URL} aria-current={page === "about" ? "page" : undefined}>About Us</a>
           <a href={homeContact}>Contact</a>
