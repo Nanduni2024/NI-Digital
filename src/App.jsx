@@ -96,7 +96,6 @@ function Icon({ name, className }) {
         <path d="M10 18.5h4" />
       </>
     ),
-    tablet: <><rect x="4" y="2" width="16" height="20" rx="2" /><circle cx="12" cy="18" r=".7" fill="currentColor" stroke="none" /></>,
     printer: (
       <>
         <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
@@ -148,9 +147,6 @@ function Eyebrow({ children }) {
 }
 
 function CategoryVisual({ category, className = "" }) {
-  if (category.id === "tablets") {
-    return <div className={`${className} category-visual-tablet`} aria-hidden="true"><Icon name="tablet" /></div>;
-  }
   return <img className={className} src={`${BASE_URL}assets/${category.image}`} alt={category.alt} loading="lazy" />;
 }
 
@@ -250,7 +246,7 @@ function Header({ page }) {
             </div>
             <div className="mega-menu-grid">
               {catalogCategories.map((category) => (
-                <a className="mega-category" href={productsHref({ category: category.id })} key={category.id}>
+                <a className={`mega-category${category.id === "tablets" ? " is-tablet-category" : ""}`} href={productsHref({ category: category.id })} key={category.id}>
                   <CategoryVisual category={category} className="mega-category-image" />
                   <span><strong>{category.title}</strong><small>{getCategoryBrands(category).slice(0, 4).join(" · ") || "Accessories & more"}</small></span>
                   <span className="mega-arrow" aria-hidden="true">↗</span>
@@ -883,7 +879,7 @@ function HomePage() {
           <div className="products-grid category-home-grid">
             {catalogCategories.map((category) => (
               <a
-                className="product-card category-home-card reveal"
+                className={`product-card category-home-card reveal${category.id === "tablets" ? " is-tablet-category" : ""}`}
                 href={productsHref({ category: category.id })}
                 aria-label={`Explore ${category.title} and ask about current options`}
                 key={category.id}

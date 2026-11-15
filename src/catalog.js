@@ -49,8 +49,8 @@ export const catalogCategories = [
   {
     id: "tablets",
     title: "Tabs / Tablets",
-    image: "product-phones.jpg",
-    alt: "Tablet computer for work, study, and entertainment",
+    image: "product-tablets.svg",
+    alt: "A premium tablet and stylus shown in a soft blue studio setting",
     description: "Tablets are organized separately from mobile phones, with accessories in their own group.",
     sections: [
       { title: "Tabs / Tablets", brands: ["Samsung", "Xiaomi", "Google Pixel"] },
